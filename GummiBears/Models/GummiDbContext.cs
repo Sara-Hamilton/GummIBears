@@ -13,6 +13,7 @@ namespace GummiBears.Models
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -26,7 +27,6 @@ namespace GummiBears.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Product>().ToTable("Products");
             base.OnModelCreating(builder);
         }
     }
