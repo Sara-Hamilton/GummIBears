@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace GummiBearKingdom.Models
+namespace GummiBears.Models
 {
     public class GummiDbContext : DbContext
     {
