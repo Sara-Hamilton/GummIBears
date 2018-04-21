@@ -1,0 +1,25 @@
+﻿@model GummiBears.Models.Product
+
+@{
+    ViewData["Title"] = "Product - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a new Product</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)<br />
+    @Html.EditorFor(model => model.Name)<br />
+    @Html.LabelFor(model => model.Description)<br />
+    @Html.EditorFor(model => model.Description)<br />
+    @Html.LabelFor(model => model.Cost)<br />
+   
+    
+    @Html.EditorFor(model => model.Cost)
+    <input type="submit" value="Create" class="btn btn-default" />
+
+}
+
+@Html.ActionLink("Back to Products", "Index")
