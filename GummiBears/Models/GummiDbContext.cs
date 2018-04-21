@@ -27,6 +27,7 @@ namespace GummiBears.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Product>().ToTable("Products");
             base.OnModelCreating(builder);
         }
     }
