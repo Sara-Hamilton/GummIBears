@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GummiBears.Models.Product>
+
+@{
+    ViewData["Title"] = "Product - DeleteAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Are you sure you want to delete all of the products?</h2>
+<h2>This action cannot be undone.</h2>
+<hr />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+      
+        <th></th>
+     
+
+    </tr>
+    @foreach (var listProduct in Model)
+
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelProduct => listProduct.Name)</td>
+        
+            <td>
+              
+            </td>
+        </tr>
+
+    }
+
+
+</table>
+
+@using (Html.BeginForm())
+{
+    <input class="btn btn-danger" type="submit" value="DeleteAll" />
+}
+
+<p>@Html.ActionLink("Back to Products", "Index")</p>
