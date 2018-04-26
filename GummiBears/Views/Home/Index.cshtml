@@ -1,1 +1,29 @@
-﻿<h1><center>Welcome to Gummi Bear Kingdom</center></h1>
+﻿<center><h1>Welcome to Gummi Bear Kingdom</h1></center>
+
+@model IEnumerable<GummiBears.Models.Product>
+
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Top Products</h2>
+<hr />
+ 
+    @foreach (var listProduct in Model)
+
+    {
+        <div class="well">
+    
+            <p>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(modelProduct => listProduct.Name)</p>
+            <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelProduct => listProduct.Description)</p>
+            <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</p>
+   
+        </div>
+        <hr/>
+
+    }
+
+
+
+

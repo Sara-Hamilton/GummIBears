@@ -27,7 +27,7 @@ namespace GummiBears
                     var context = services.GetRequiredService<GummiDbContext>();
                     DbInitializer.Initialize(context);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                    
                 }
