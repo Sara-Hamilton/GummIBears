@@ -1,4 +1,5 @@
-﻿<center><h1>Welcome to Gummi Bear Kingdom</h1></center>
+﻿<br/>
+<div class="jumbotron"><center><h1>Welcome to Gummi Bear Kingdom</h1></center></div>
 
 @model IEnumerable<GummiBears.Models.Product>
 
@@ -7,23 +8,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Top Products</h2>
-<hr />
- 
-    @foreach (var listProduct in Model)
 
-    {
+<div class="row">
+
+@foreach (var listProduct in Model)
+
+{
+    <div class="col-md-4">
         <div class="well">
-    
-            <p>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(modelProduct => listProduct.Name)</p>
+
+            <h2>@Html.DisplayFor(modelProduct => listProduct.Name)</h2>
             <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelProduct => listProduct.Description)</p>
             <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</p>
-   
+            <div>https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg</div>
+            <img class="resize" src="https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg" alt="Giant Gummy Bear" />
+
         </div>
-        <hr/>
+    </div>
 
-    }
 
+}
+
+</div>
 
 
 
