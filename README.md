@@ -54,21 +54,28 @@ This is the Epicodus weekly project for week 1 of the .NET course.  Its purpose 
 
 * _Start the Apache and MySql Servers in MAMP_
 
- * _Move into the directory_
- ```
- $ cd GummiBears/GummiBears
- ```
+* _Move into the directory_
+```
+$ cd GummiBears
+```
+*  _Restore the program_
 
+ ```
+ $ dotnet restore
+ ```
+* _Move one layer deeper into the directory_
+```
+$ cd GummiBears
+```
 *  _Setup the database_
 
-  ```
-  $ dotnet ef database update
-  ```
+ ```
+ $ dotnet ef database update
+```
 *  _Run the program_
-  ```
-  $ dotnet restore
-  $ dotnet run
-  ```
+```
+$ dotnet run
+```
 
 
 ### License
