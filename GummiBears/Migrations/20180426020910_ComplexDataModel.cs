@@ -5,7 +5,7 @@ using GummiBears.Data;
 
 namespace GummiBears.Migrations
 {
-    public partial class modifyDbContext : Migration
+    public partial class ComplexDataModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
+using GummiBears.Data;
 
 namespace GummiBears.Migrations
 {

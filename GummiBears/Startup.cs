@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using GummiBears.Models;
+using GummiBears.Data;
 
 namespace GummiBears
 {
