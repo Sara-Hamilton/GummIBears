@@ -71,15 +71,14 @@ namespace GummiBears.Tests.ControllerTests
             ReviewsController controller = new ReviewsController(reviewMock.Object);
             Review testReview = new Review();
             testReview.Title = "Love It!";
-            testReview.ProductId = 1;
-            var test = "";
+            testReview.ReviewId = 1;
 
             // Act
             ViewResult indexView = controller.Index() as ViewResult;
             List<Review> collection = indexView.ViewData.Model as List<Review>;
 
             // Assert
-            CollectionAssert.Contains(collection, test);
+            CollectionAssert.Contains(collection, testReview);
         }
     }
 }
