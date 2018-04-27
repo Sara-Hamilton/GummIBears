@@ -37,9 +37,9 @@ namespace GummiBears.Models
             return this.ProductId.GetHashCode();
         }
 
-        public decimal reviewAverage()
+        public decimal AverageReview()
         {
-            return Reviews.Average(r => r.Rating);
+            return this.Reviews.Average(r => r.Rating);
         }
     }
 }

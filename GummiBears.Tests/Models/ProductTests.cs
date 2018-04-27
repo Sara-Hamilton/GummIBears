@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GummiBears.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GummiBears.Tests
 {
@@ -94,7 +95,26 @@ namespace GummiBears.Tests
             Assert.AreEqual(product1, product2);
         }
 
+        [TestMethod]
+        public void AverageReview_ReturnsAverageReviewRating_Decimal()
+        {
+            //Arrange
+            var review1 = new Review();
+            review1.Rating = 3;
+            var review2 = new Review();
+            review2.Rating = 4;
+            var product = new Product();
+            List<Review> reviews = new List<Review>();
+            reviews.Add(review1);
+            reviews.Add(review2);
+            product.Reviews = reviews;
 
+            //Act
+            var result = product.AverageReview();
+
+            //Assert
+            Assert.AreEqual(3.5, result);
+        }
 
     }
 }
