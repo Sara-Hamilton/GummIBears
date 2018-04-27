@@ -116,5 +116,17 @@ namespace GummiBears.Tests
             Assert.AreEqual(3.5m, result);
         }
 
+        [TestMethod]
+        public void Constructor_CreatesAProductObject_True()
+        {
+            //Arrange
+            var product = new Product();
+
+            //Act
+
+            //Assert
+            Assert.IsInstanceOfType(product, typeof(Review));
+        }
+
     }
 }
