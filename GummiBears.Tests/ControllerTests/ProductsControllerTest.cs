@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using GummiBears.Models;
-using GummiBears.Controllers;
 using Moq;
 using System.Linq;
 using System;
+using GummiBears.Controllers;
+using GummiBearKingdom.Controllers;
 
 namespace GummiBears.Tests.ControllerTests
 {
@@ -16,7 +17,7 @@ namespace GummiBears.Tests.ControllerTests
 
         private void DbSetup()
         {
-            mock.Setup(m => m.Products).Returns(New Product[]
+            mock.Setup(m => m.Products).Returns(new Product[]
             {
                 new Product { ProductId = 1, Name = "Giant Gummi", Description = "12 oz. gummi bear", Cost = 4.99m, ImageUrl = "https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg" },
             new Product { ProductId = 2, Name = "Green Gummies", Description = "16 oz. bag  of green gummi bears", Cost = 6.49m, ImageUrl = "https://www.ilovesugar.com/images/Green-Apple-Gummy-Bears-Candy.jpg" },
@@ -24,7 +25,20 @@ namespace GummiBears.Tests.ControllerTests
             }.AsQueryable());
         }
 
-        ViewResult indexView = new ProductsControllerTest(mock.Object).Index() as ViewResult;
-        
+        [TestMethod]
+        public void Mock_GetViewResultIndex_ActionResult() 
+        {
+            //Arrange
+            DbSetup();
+            ProductsController controller = new ProductsController(mock.Object);
+
+            //Act
+            var result = controller.Index();
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+        }
+
+
     }
 }
