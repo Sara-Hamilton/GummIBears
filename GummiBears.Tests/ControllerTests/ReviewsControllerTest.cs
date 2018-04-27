@@ -95,7 +95,7 @@ namespace GummiBears.Tests.ControllerTests
             ReviewsController controller = new ReviewsController(reviewMock.Object);
 
             // Act
-            var resultView = controller.Create(testReview) as ViewResult;
+            var resultView = controller.Create(testReview) as RedirectToActionResult;
 
 
             // Assert
