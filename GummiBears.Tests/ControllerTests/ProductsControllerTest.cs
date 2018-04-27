@@ -145,7 +145,7 @@ namespace GummiBears.Tests.ControllerTests
             int result = db.Products.ToList().Count;
 
             //Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(0, result);
         }
 
     }
