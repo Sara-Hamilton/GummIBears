@@ -13,8 +13,11 @@ namespace GummiBears.Models
         [Key]
         public int ReviewId { get; set; }
         public string Title { get; set; }
-        public string Content { get; set; }
-        public int Rating { get; set; }
+        public string Author { get; set; }
+        public string Content_Body { get; set; }
+
+        [Range(1,5)]
+        public decimal Rating { get; set; }
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
     }
