@@ -28,7 +28,7 @@ namespace GummiBears.Tests
             review1.ReviewId = 1;
 
             var review2 = new Review();
-            review2.ReviewId = 2;
+            review2.ReviewId = 1;
 
             //Act
 
