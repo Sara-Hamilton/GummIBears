@@ -47,5 +47,17 @@ namespace GummiBears.Models
             }
             else return false;
         }
+
+        public Boolean VerifyContentLength()
+        {
+            if (this.Content_Body.Length > 255)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
