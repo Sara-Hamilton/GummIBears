@@ -54,7 +54,7 @@ namespace GummiBears.Tests.ControllerTests
         }
 
         [TestMethod]
-        public void Mock_IndexModelContainsItems_Collection()
+        public void Mock_IndexModelContainsProducts_Collection()
         {
             // Arrange
             DbSetup();
@@ -62,14 +62,13 @@ namespace GummiBears.Tests.ControllerTests
             Product testProduct = new Product();
             testProduct.Name = "Giant Gummi";
             testProduct.ProductId = 1;
-            var test = "";
 
             // Act
             ViewResult indexView = controller.Index() as ViewResult;
             List<Product> collection = indexView.ViewData.Model as List<Product>;
 
             // Assert
-            CollectionAssert.Contains(collection, test);
+            CollectionAssert.Contains(collection, testProduct);
         }
 
 
