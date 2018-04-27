@@ -34,5 +34,19 @@ namespace GummiBears.Tests
             Assert.AreEqual("16 oz. gummy bear", result);
         }
 
+        [TestMethod]
+        public void GetCost_ReturnsProductCost_Decimal()
+        {
+            //Arrange
+            var product = new Product();
+            product.Cost = 2.99m;
+
+            //Act
+            var result = product.Cost;
+
+            //Assert
+            Assert.AreEqual("16 oz. gummy bear", result);
+        }
+
     }
 }
