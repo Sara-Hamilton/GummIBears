@@ -9,7 +9,7 @@ namespace GummiBears.Tests
     public class ReviewTests
     {
         [TestMethod]
-        public void Constructor_CreatesAProductObject_True()
+        public void Constructor_CreatesAReviewObject_True()
         {
             //Arrange
             var review = new Review();
@@ -17,7 +17,7 @@ namespace GummiBears.Tests
             //Act
 
             //Assert
-            Assert.IsInstanceOfType(review, typeof(Product));
+            Assert.IsInstanceOfType(review, typeof(Review));
         }
     }
 }
