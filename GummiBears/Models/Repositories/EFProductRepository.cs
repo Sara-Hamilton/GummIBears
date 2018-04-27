@@ -33,5 +33,13 @@ namespace GummiBears.Models
             db.Products.Remove(product);
             db.SaveChanges();
         }
+
+        public void DeleteAll()
+        {
+            db.Products.RemoveRange(db.Products);
+            db.SaveChanges();
+        }
+
+
     }
 }
