@@ -48,5 +48,19 @@ namespace GummiBears.Tests.ControllerTests
             //Assert
             Assert.IsInstanceOfType(result, typeof(ActionResult));
         }
+
+        [TestMethod]
+        public void Mock_IndexContainsModelData_List()
+        {
+            // Arrange
+            DbSetup();
+            ViewResult indexView = new ReviewsController(reviewMock.Object).Index() as ViewResult;
+
+            // Act
+            var result = indexView.ViewData.Model;
+
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(List<Product>));
+        }
     }
 }
