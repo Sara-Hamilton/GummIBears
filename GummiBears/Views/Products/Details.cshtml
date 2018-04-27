@@ -14,7 +14,7 @@
     <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(model => model.Cost)</p>
 </div>
 <h2>Reviews</h2>
-<h3>Average review : @Model.Reviews.Average(r => r.Rating)</h3>
+@*<h3>Average review : @Model.Reviews.Average(r => r.Rating)</h3>*@
 <h3></h3>
 @foreach (var listReview in @Model.Reviews)
 {
