@@ -73,7 +73,7 @@ namespace GummiBears.Tests
             var result = product.ProductId;
 
             //Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(1, result);
         }
 
     }
