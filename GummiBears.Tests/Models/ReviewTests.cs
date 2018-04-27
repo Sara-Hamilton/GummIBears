@@ -70,7 +70,7 @@ namespace GummiBears.Tests
         {
             //Act
             var review = new Review();
-            review.Content_Body = "This is the best gummy bear I have ever tated.";
+            review.Content_Body = "This is the best gummy bear I have ever tasted.";
 
             //Act
             var result = review.VerifyContentLength();
