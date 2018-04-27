@@ -123,14 +123,13 @@ namespace GummiBears.Tests.ControllerTests
             ProductsController controller = new ProductsController(db);
             Product testProduct = new Product();
             testProduct.Description = "TestDb Product";
-            var test = "";
 
             // Act
             controller.Create(testProduct);
             var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
 
             // Assert
-            CollectionAssert.Contains(collection, test);
+            CollectionAssert.Contains(collection, testProduct);
         }
 
     }
