@@ -11,6 +11,7 @@ namespace GummiBears.Tests
         {
             //Arrange
             var product = new Product();
+            product.Name = "Giant Gummy Bear";
 
             //Act
             var result = product.Name;
