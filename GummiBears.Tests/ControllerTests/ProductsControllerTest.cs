@@ -50,7 +50,7 @@ namespace GummiBears.Tests.ControllerTests
             var result = indexView.ViewData.Model;
 
             // Assert
-            Assert.IsInstanceOfType(result, typeof(List<Review>));
+            Assert.IsInstanceOfType(result, typeof(List<Product>));
         }
 
 
