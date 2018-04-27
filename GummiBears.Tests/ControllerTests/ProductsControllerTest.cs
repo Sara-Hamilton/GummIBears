@@ -12,10 +12,15 @@ using GummiBears.Tests.Models;
 namespace GummiBears.Tests.ControllerTests
 {
     [TestClass]
-    public class ProductsControllerTest
+    public class ProductsControllerTest : IDisposable
     {
         Mock<IProductRepository> mock = new Mock<IProductRepository>();
         EFProductRepository db = new EFProductRepository(new TestDbContext());
+
+        public void Dispose()
+        {
+            db.DeleteAll();
+        }
 
         private void DbSetup()
         {
