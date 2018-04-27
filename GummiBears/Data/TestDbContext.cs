@@ -11,7 +11,7 @@ namespace GummiBears.Tests.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseMySql(@"Server=localhost;database=gummi_bears_test;uid=root;pwd=root;");
+            options.UseMySql(@"Server=localhost; Port=8889; database=gummi_bears_test;uid=root;pwd=root;");
         }
     }
 }
