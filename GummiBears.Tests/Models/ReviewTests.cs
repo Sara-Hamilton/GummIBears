@@ -19,5 +19,22 @@ namespace GummiBears.Tests
             //Assert
             Assert.IsInstanceOfType(review, typeof(Review));
         }
+
+        [TestMethod]
+        public void Equals_ReviewsWithSameIdAreEqual_True()
+        {
+            //Arrange 
+            var review1 = new Review();
+            review1.ReviewId = 1;
+
+            var review2 = new Review();
+            review2.ReviewId = 2;
+
+            //Act
+
+
+            //Assert
+            Assert.AreEqual(review1, review2);
+        }
     }
 }
