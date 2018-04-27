@@ -20,5 +20,23 @@ namespace GummiBears.Models
         public decimal Rating { get; set; }
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
+
+        public override bool Equals(System.Object otherReview)
+        {
+            if (!(otherReview is Review))
+            {
+                return false;
+            }
+            else
+            {
+                Review newReview = (Review)otherReview;
+                return this.ReviewId.Equals(newReview.ReviewId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ReviewId.GetHashCode();
+        }
     }
 }
