@@ -59,7 +59,7 @@ namespace GummiBears.Tests
             var result = product.ImageUrl;
 
             //Assert
-            Assert.AreEqual("", result);
+            Assert.AreEqual("https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg", result);
         }
 
     }
