@@ -130,5 +130,18 @@ namespace GummiBears.Tests.ControllerTests
             CollectionAssert.Contains(collection, testReview);
         }
 
+        [TestMethod]
+        public void DB_DbStartsEmpty_0()
+        {
+            //Arrange
+            //Act
+            int productResult = productDb.Products.ToList().Count;
+            int reviewResult = reviewDb.Reviews.ToList().Count;
+
+            //Assert
+            Assert.AreEqual(1, productResult);
+            Assert.AreEqual(1, reviewResult);
+        }
+
     }
 }
