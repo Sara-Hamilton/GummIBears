@@ -7,6 +7,7 @@ using System.Linq;
 using System;
 using GummiBears.Controllers;
 using GummiBearKingdom.Controllers;
+using GummiBears.Tests.Models;
 
 namespace GummiBears.Tests.ControllerTests
 {
@@ -14,6 +15,7 @@ namespace GummiBears.Tests.ControllerTests
     public class ProductsControllerTest
     {
         Mock<IProductRepository> mock = new Mock<IProductRepository>();
+        EFProductRepository db = new EFProductRepository(new TestDbContext());
 
         private void DbSetup()
         {
@@ -112,6 +114,22 @@ namespace GummiBears.Tests.ControllerTests
             // Assert
             Assert.IsInstanceOfType(resultView, typeof(ViewResult));
             Assert.IsInstanceOfType(model, typeof(Product));
+        }
+
+        [TestMethod]
+        public void DB_CreatesNewEntries_Collection()
+        {
+            // Arrange
+            ProductsController controller = new ProductsController(db);
+            Product testProduct = new Product();
+            testProduct.Description = "TestDb Product";
+
+            // Act
+            controller.Create(testProduct);
+            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
+
+            // Assert
+            CollectionAssert.Contains(collection, testProduct);
         }
 
 
