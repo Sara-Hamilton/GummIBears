@@ -34,5 +34,19 @@ namespace GummiBears.Tests.ControllerTests
                 new Review { ReviewId = 6, Title = "Great Green Gummies", Author = "George", Content_Body = "These are great.  i can't stop eating them.", Rating = 5, ProductId = 3},
             }.AsQueryable());
         }
+
+        [TestMethod]
+        public void Mock_GetViewResultIndex_ActionResult()
+        {
+            //Arrange
+            DbSetup();
+            ReviewsController controller = new ReviewsController(reviewMock.Object);
+
+            //Act
+            var result = controller.Index();
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+        }
     }
 }
