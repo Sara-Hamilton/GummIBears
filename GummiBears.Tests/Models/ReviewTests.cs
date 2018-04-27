@@ -76,7 +76,7 @@ namespace GummiBears.Tests
             var result = review.VerifyContentLength();
 
             //Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
     }
 }
