@@ -45,7 +45,7 @@ namespace GummiBears.Tests
             var result = product.Cost;
 
             //Assert
-            Assert.AreEqual("16 oz. gummy bear", result);
+            Assert.AreEqual(2.99m, result);
         }
 
     }
