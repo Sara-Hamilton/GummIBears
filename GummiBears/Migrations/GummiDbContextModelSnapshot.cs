@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GummiBears.Models;
 using GummiBears.Data;
 
 namespace GummiBears.Migrations
@@ -24,6 +23,8 @@ namespace GummiBears.Migrations
                     b.Property<decimal?>("Cost");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("ImageUrl");
 
                     b.Property<string>("Name");
 

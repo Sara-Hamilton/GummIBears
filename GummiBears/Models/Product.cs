@@ -16,6 +16,7 @@ namespace GummiBears.Models
         public string Description { get; set; }
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal? Cost { get; set; }
+        public string ImageUrl { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
     }
 }

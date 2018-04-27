@@ -10,6 +10,7 @@
 
 <table class="table">
     <tr>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -26,16 +27,18 @@
     @foreach (var listProduct in Model)
 
     {
-        <tr>
-            <td>@Html.DisplayFor(modelProduct => listProduct.Name)</td>
-            <td>@Html.DisplayFor(modelProduct => listProduct.Description)</td>
-            <td><span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
-                @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
-            </td>
-        </tr>
+    <tr>
+        <td><img class="resize" src=@listProduct.ImageUrl alt="Gummy Candy" /></td>
+        <td>@Html.DisplayFor(modelProduct => listProduct.Name)</td>
+        <td>@Html.DisplayFor(modelProduct => listProduct.Description)</td>
+        <td><span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</td>
+        <td>
+            @Html.ActionLink("Review", "Create", "Reviews", "Review", new { id = listProduct.ProductId }) |
+            @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
+        </td>
+    </tr>
 
     }
 
