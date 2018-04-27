@@ -78,14 +78,14 @@ namespace GummiBears.Tests.ControllerTests
             Product testProduct = new Product
             {
                 ProductId = 1,
-                Description = "Wash the dog"
+                Name = "Giant Gummi"
             };
 
             DbSetup();
             ProductsController controller = new ProductsController(mock.Object);
 
             // Act
-            var resultView = controller.Create(testProduct) as ViewResult;
+            var resultView = controller.Create(testProduct) as RedirectToActionResult;
 
 
             // Assert
