@@ -36,5 +36,10 @@ namespace GummiBears.Models
         {
             return this.ProductId.GetHashCode();
         }
+
+        public decimal reviewAverage()
+        {
+            return Reviews.Average(r => r.Rating);
+        }
     }
 }
