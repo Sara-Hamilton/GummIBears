@@ -25,13 +25,13 @@ namespace GummiBears.Tests
         {
             //Arrange
             var product = new Product();
-            product.Name = "16 oz. gummy bear";
+            product.Description = "16 oz. gummy bear";
 
             //Act
             var result = product.Description;
 
             //Assert
-            Assert.AreEqual("Giant Gummy Bear", result);
+            Assert.AreEqual("16 oz. gummy bear", result);
         }
 
     }
