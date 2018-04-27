@@ -76,6 +76,9 @@ $ cd GummiBears
 ```
 $ dotnet run
 ```
+## Testing
+* _Open project solution in Visual Studio_
+*  _Run the tests_
 
 
 ### License
