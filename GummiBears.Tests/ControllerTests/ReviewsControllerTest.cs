@@ -7,6 +7,7 @@ using System.Linq;
 using System;
 using GummiBears.Controllers;
 using GummiBears.Tests.Models;
+using GummiBearKingdom.Controllers;
 
 namespace GummiBears.Tests.ControllerTests
 {
@@ -109,14 +110,15 @@ namespace GummiBears.Tests.ControllerTests
         public void DB_CreatesNewEntries_Collection()
         {
             // Arrange
-            ReviewsController controller = new ReviewsController(reviewDb);
+            ProductsController productController = new ProductsController(productDb);
+            ReviewsController reviewController = new ReviewsController(reviewDb);
             Product testProduct = new Product { ProductId = 1, Name = "Giant Gummi", Description = "12 oz. gummi bear", Cost = 4.99m, ImageUrl = "https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg" };
             Review testReview = new Review { ReviewId = 1, Title = "Love It!", Author = "Sara", Content_Body = "This is the best gummy bear I have ever had.", Rating = 5, ProductId = 1 };
 
             // Act
-            controller.Create(testProduct.ProductId);
-            controller.Create(testReview);
-            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Review>;
+            productController.Create(testProduct);
+            reviewController.Create(testReview);
+            var collection = (reviewController.Index() as ViewResult).ViewData.Model as List<Review>;
 
             // Assert
             CollectionAssert.Contains(collection, testReview);
