@@ -29,5 +29,11 @@ namespace GummiBears.Models
             db.SaveChanges();
             return review;
         }
+
+        public void DeleteAll()
+        {
+            db.Reviews.RemoveRange(db.Reviews);
+            db.SaveChanges();
+        }
     }
 }
