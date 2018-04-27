@@ -62,5 +62,19 @@ namespace GummiBears.Tests
             Assert.AreEqual("https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg", result);
         }
 
+        [TestMethod]
+        public void GetProductId_ReturnsProductId_Int()
+        {
+            //Arrange
+            var product = new Product();
+            product.ProductId = 1;
+
+            //Act
+            var result = product.ProductId;
+
+            //Assert
+            Assert.AreEqual(0, result);
+        }
+
     }
 }
