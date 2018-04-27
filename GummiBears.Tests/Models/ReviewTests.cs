@@ -36,5 +36,20 @@ namespace GummiBears.Tests
             //Assert
             Assert.AreEqual(review1, review2);
         }
+
+        [TestMethod]
+        public void VerifyRating_RatingIsBetweenOneAndFive_True()
+        {
+            //Act
+            var review = new Review();
+            review.Rating = 4;
+
+            //Act
+            var result = review.VerifyRating();
+
+            //Assert
+            Assert.AreEqual(false, result);
+
+        }
     }
 }
