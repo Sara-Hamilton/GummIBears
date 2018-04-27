@@ -19,5 +19,20 @@ namespace GummiBears.Tests
             //Assert
             Assert.AreEqual("Giant Gummy Bear", result);
         }
+
+        [TestMethod]
+        public void GetDescription_ReturnsProductDescription_String()
+        {
+            //Arrange
+            var product = new Product();
+            product.Name = "16 oz. gummy bear";
+
+            //Act
+            var result = product.Description;
+
+            //Assert
+            Assert.AreEqual("Giant Gummy Bear", result);
+        }
+
     }
 }
