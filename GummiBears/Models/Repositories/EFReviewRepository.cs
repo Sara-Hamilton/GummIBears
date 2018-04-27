@@ -9,7 +9,16 @@ namespace GummiBears.Models
 {
     public class EFReviewRepository : IReviewRepository
     {
-        GummiDbContext db = new GummiDbContext();
+        GummiDbContext db;
+        public EFReviewRepository()
+        {
+            db = new GummiDbContext();
+        }
+
+        public EFReviewRepository(GummiDbContext thisDb)
+        {
+            db = thisDb;
+        }
 
         public IQueryable<Review> Reviews
         { get { return db.Reviews; } }
