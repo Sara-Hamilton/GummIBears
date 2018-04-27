@@ -64,5 +64,19 @@ namespace GummiBears.Tests
             //Assert
             Assert.AreEqual(false, result);
         }
+
+        [TestMethod]
+        public void VerifyContentLength_ReturnsTrueIfLengthUnder255_True()
+        {
+            //Act
+            var review = new Review();
+            review.Content_Body = "This is the best gummy bear I have ever tated.";
+
+            //Act
+            var result = review.VerifyContentLength();
+
+            //Assert
+            Assert.AreEqual(false, result);
+        }
     }
 }
