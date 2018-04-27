@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GummiBears.Models;
+using System.Collections.Generic;
 
 namespace GummiBears.Tests
 {
@@ -75,6 +76,25 @@ namespace GummiBears.Tests
             //Assert
             Assert.AreEqual(1, result);
         }
+
+        [TestMethod]
+        public void Equals_ProductsWithSameIdAreEqual_True()
+        {
+            //Arrange 
+            var product1 = new Product();
+            product1.ProductId = 1;
+
+            var product2 = new Product();
+            product2.ProductId = 2;
+
+            //Act
+            
+
+            //Assert
+            Assert.AreEqual(product1, product2);
+        }
+
+
 
     }
 }
