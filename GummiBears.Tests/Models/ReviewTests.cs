@@ -49,7 +49,20 @@ namespace GummiBears.Tests
 
             //Assert
             Assert.AreEqual(true, result);
+        }
 
+        [TestMethod]
+        public void VerifyRating_ReturnsFalseIfRatingOutOfRange_False()
+        {
+            //Act
+            var review = new Review();
+            review.Rating = 6;
+
+            //Act
+            var result = review.VerifyRating();
+
+            //Assert
+            Assert.AreEqual(true, result);
         }
     }
 }
