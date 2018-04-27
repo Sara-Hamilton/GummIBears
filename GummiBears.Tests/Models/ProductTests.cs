@@ -113,7 +113,7 @@ namespace GummiBears.Tests
             var result = product.AverageReview();
 
             //Assert
-            Assert.AreEqual(3.5, result);
+            Assert.AreEqual(3.5m, result);
         }
 
     }
