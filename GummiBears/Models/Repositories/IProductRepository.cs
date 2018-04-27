@@ -11,5 +11,6 @@ namespace GummiBears.Models
         Product Save(Product product);
         Product Edit(Product product);
         void Remove(Product product);
+        void DeleteAll();
     }
 }
