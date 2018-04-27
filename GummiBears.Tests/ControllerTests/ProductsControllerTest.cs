@@ -89,7 +89,7 @@ namespace GummiBears.Tests.ControllerTests
 
 
             // Assert
-            Assert.IsInstanceOfType(resultView, typeof(ActionResult));
+            Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
 
         }
 
