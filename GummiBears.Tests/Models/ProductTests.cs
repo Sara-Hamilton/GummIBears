@@ -125,7 +125,7 @@ namespace GummiBears.Tests
             //Act
 
             //Assert
-            Assert.IsInstanceOfType(product, typeof(Review));
+            Assert.IsInstanceOfType(product, typeof(Product));
         }
 
     }
