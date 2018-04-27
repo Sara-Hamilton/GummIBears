@@ -59,7 +59,8 @@ namespace GummiBears.Migrations.TestDb
                 {
                     b.HasOne("GummiBears.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }
