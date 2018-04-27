@@ -85,7 +85,7 @@ namespace GummiBears.Tests
             product1.ProductId = 1;
 
             var product2 = new Product();
-            product2.ProductId = 2;
+            product2.ProductId = 1;
 
             //Act
             
