@@ -18,13 +18,14 @@
 <h3></h3>
 @foreach (var listReview in @Model.Reviews)
 {
-    <div class="well">
+<div class="well">
 
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Title) : @Html.DisplayFor(modelProduct => listReview.Title)</p>
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Content_Body) : @Html.DisplayFor(modelProduct => listReview.Content_Body)</p>
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Rating) : @Html.DisplayFor(modelProduct => listReview.Rating)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Author) : @Html.DisplayFor(modelProduct => listReview.Author)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Title) : @Html.DisplayFor(modelProduct => listReview.Title)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Content_Body) : @Html.DisplayFor(modelProduct => listReview.Content_Body)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Rating) : @Html.DisplayFor(modelProduct => listReview.Rating)</p>
 
-     </div>
+</div>
 <hr />
 }
 

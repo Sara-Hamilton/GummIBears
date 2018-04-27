@@ -10,10 +10,12 @@
 
 @using (Html.BeginForm())
 {
+    @Html.LabelFor(model => model.Author)<br />
+    @Html.EditorFor(model => model.Author)<br />
     @Html.LabelFor(model => model.Title)<br />
     @Html.EditorFor(model => model.Title)<br />
-    @Html.LabelFor(model => model.Content)<br />
-    @Html.EditorFor(model => model.Content)<br />
+    @Html.LabelFor(model => model.Content_Body)<br />
+    @Html.TextBoxFor(model => model.Content_Body)<br />
     @Html.LabelFor(model => model.Rating)<br />
     @Html.TextBoxFor(model => model.Rating, new { @type = "number", @min = "1", @max = "5" })<br />
 
@@ -24,4 +26,4 @@
 
 }
 
-@Html.ActionLink("Back to Products", "Home/Index")
+@Html.ActionLink("Back to Products", "Index", "Products", null, new {  })
