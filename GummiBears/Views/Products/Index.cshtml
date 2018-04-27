@@ -32,8 +32,9 @@
         <td>@Html.DisplayFor(modelProduct => listProduct.Name)</td>
         <td>@Html.DisplayFor(modelProduct => listProduct.Description)</td>
         <td><span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</td>
+      
         <td>
-            @Html.ActionLink("Review", "Create", "Reviews", "Review", new { id = listProduct.ProductId }) |
+            @Html.ActionLink("Review", "Create", "Reviews", null, new { id = listProduct.ProductId }) |
             @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
             @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
             @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })

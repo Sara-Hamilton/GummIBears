@@ -15,7 +15,7 @@
     @Html.LabelFor(model => model.Content)<br />
     @Html.EditorFor(model => model.Content)<br />
     @Html.LabelFor(model => model.Rating)<br />
-    @Html.EditorFor(model => model.Rating)
+    @Html.TextBoxFor(model => model.Rating, new { @type = "number", @min = "1", @max = "5" })<br />
 
     @Html.LabelFor(model => model.ProductId)
     @Html.DropDownList("ProductId")

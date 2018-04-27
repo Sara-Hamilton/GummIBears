@@ -35,7 +35,8 @@ namespace GummiBearKingdom.Controllers
 
         public IActionResult Details(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(products => products.ProductId == id);
+            double averageRating = db.Reviews.Where(r => r.ProductId == id).Select(r => r.Rating).Average();
+            var thisProduct = db.Products.Include(product => product.Reviews).FirstOrDefault(products => products.ProductId == id);
             return View(thisProduct);
         }
 
@@ -82,5 +83,6 @@ namespace GummiBearKingdom.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
     }
 }
