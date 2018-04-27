@@ -139,8 +139,8 @@ namespace GummiBears.Tests.ControllerTests
             int reviewResult = reviewDb.Reviews.ToList().Count;
 
             //Assert
-            Assert.AreEqual(1, productResult);
-            Assert.AreEqual(1, reviewResult);
+            Assert.AreEqual(0, productResult);
+            Assert.AreEqual(0, reviewResult);
         }
 
     }
