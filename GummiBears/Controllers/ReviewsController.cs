@@ -33,9 +33,7 @@ namespace GummiBears.Controllers
 
         public IActionResult Create(int id)
         {
-            //ViewBag.ProductId = new SelectList(db.Products, "ProductId", "Name");
-            //var thisProduct = db.Products.FirstOrDefault(p => p.ProductId == id);
-
+            ViewBag.ProductId = new SelectList(reviewRepo.Products, "ProductId", "Name");
             return View();
         }
 
