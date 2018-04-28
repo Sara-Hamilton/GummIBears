@@ -19,6 +19,7 @@ namespace GummiBears
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;

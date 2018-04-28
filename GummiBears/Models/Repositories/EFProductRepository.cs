@@ -23,6 +23,11 @@ namespace GummiBears.Models
         public IQueryable<Product> Products
         { get { return db.Products; } }
 
+        public IQueryable<Review> SortedReviews
+        { get { return db.Reviews.OrderBy(n => SortedReviews.Count(x => x ==n)).ThenBy(n => n); } }
+
+        public IQueryable<Review> Reviews => throw new NotImplementedException();
+
         public Product Save(Product product)
         {
             db.Products.Add(product);

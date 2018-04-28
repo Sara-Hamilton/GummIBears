@@ -32,7 +32,12 @@ namespace GummiBears.Data
                 new Review() { ReviewId = 3, Title = "Meh", Author = "Megan", Content_Body = "These are OK.  I've had better", Rating = 3, ProductId = 3},
                 new Review() { ReviewId = 4, Title = "Go Glitter!", Author = "Kevin", Content_Body = "Everything's better with glitter.  These gummy bears are no exception.", Rating = 3, ProductId = 3},
                 new Review() { ReviewId = 5, Title = "Gross", Author = "Jake", Content_Body = "Who wants to eat glitter?", Rating = 1, ProductId = 3},
-                new Review() { ReviewId = 6, Title = "Great Green Gummies", Author = "George", Content_Body = "These are great.  i can't stop eating them.", Rating = 5, ProductId = 3}
+                new Review() { ReviewId = 6, Title = "Great Green Gummies", Author = "George", Content_Body = "These are great.  I can't stop eating them.", Rating = 5, ProductId = 3},
+                new Review() { ReviewId = 7, Title = "I Like These", Author = "Jimmy", Content_Body = "Gummies are the best.", Rating = 5, ProductId = 2},
+                new Review() { ReviewId = 8, Title = "good", Author = "Candy", Content_Body = "5 stars", Rating = 5, ProductId = 4},
+                 new Review() { ReviewId = 9, Title = "Buy these", Author = "Penny", Content_Body = "good eatin'", Rating = 4, ProductId = 5},
+                 new Review() { ReviewId = 10, Title = "Good Gummies", Author = "Lucy", Content_Body = "These are pretty good", Rating = 3, ProductId = 6},
+                 new Review() { ReviewId = 11, Title = "Yuck", Author = "Kyle", Content_Body = "These are gross", Rating = 1, ProductId = 6},
             };
 
             foreach (Product p in products)
