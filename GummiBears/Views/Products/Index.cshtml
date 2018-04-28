@@ -28,7 +28,7 @@
 
     {
     <tr>
-        <td><img class="resize" src=@listProduct.ImageUrl alt="Gummy Candy" /></td>
+        <td><a href="~/Products/Details/@listProduct.ProductId"><img class="resize" src=@listProduct.ImageUrl alt="Gummy Candy" /></a></td>
         <td>@Html.DisplayFor(modelProduct => listProduct.Name)</td>
         <td>@Html.DisplayFor(modelProduct => listProduct.Description)</td>
         <td><span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</td>

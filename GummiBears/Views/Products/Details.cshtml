@@ -15,7 +15,7 @@
 </div>
 <h2>Reviews</h2>
 @*<h3>Average review : @Model.Reviews.Average(r => r.Rating)</h3>*@
-<h3>Average review : @String.Format("{0:N0}", @Model.AverageReview())</h3>
+<h3>Average review : @String.Format("{0:N1}", @Model.AverageReview())</h3>
 
 <h3></h3>
 @foreach (var listReview in @Model.Reviews)

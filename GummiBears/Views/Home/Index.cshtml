@@ -15,14 +15,15 @@
 
 {
     <div class="col-md-4">
-        <div class="well">
+        
+            <div class="well">
 
-            <h2>@Html.DisplayFor(modelProduct => listProduct.Name)</h2>
-            <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelProduct => listProduct.Description)</p>
-            <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</p>
-            <img class="resize" src=@listProduct.ImageUrl alt="Gummy Candy" />
+                <h2>@Html.DisplayFor(modelProduct => listProduct.Name)</h2>
+                <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelProduct => listProduct.Description)</p>
+                <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(modelProduct => listProduct.Cost)</p>
+                <a href="~/Products/Details/@listProduct.ProductId"><img class="resize" src=@listProduct.ImageUrl alt="Gummy Candy" /></a>
 
-        </div>
+            </div>
     </div>
 
 
