@@ -12,24 +12,35 @@ namespace GummiBears.Controllers
 {
     public class ReviewsController : Controller
     {
-        private GummiDbContext db = new GummiDbContext();
+        private IReviewRepository reviewRepo;
+
+        public ReviewsController(IReviewRepository repo = null)
+        {
+            if(repo == null)
+            {
+                this.reviewRepo = new EFReviewRepository();
+            }
+            else
+            {
+                this.reviewRepo = repo;
+            }
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(reviewRepo.Reviews.ToList());
         }
 
         public IActionResult Create(int id)
         {
-            ViewBag.ProductId = new SelectList(db.Products, "ProductId", "Name");
-            var thisProduct = db.Products.FirstOrDefault(p => p.ProductId == id);
-            return View(thisProduct);
+            ViewBag.ProductId = new SelectList(reviewRepo.Products, "ProductId", "Name");
+            return View();
         }
 
         [HttpPost]
         public IActionResult Create(Review review)
         {
-            db.Reviews.Add(review);
-            db.SaveChanges();
+            reviewRepo.Save(review);
             return RedirectToAction("Index");
         }
     }

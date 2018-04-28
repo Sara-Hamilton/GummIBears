@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using GummiBears.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace GummiBears.Models
+{
+    public class EFProductRepository : IProductRepository
+    {
+        GummiDbContext db;
+        public EFProductRepository()
+        {
+            db = new GummiDbContext();
+        }
+
+        public EFProductRepository (GummiDbContext thisDb)
+        {
+            db = thisDb;
+        }
+
+        public IQueryable<Product> Products
+        { get { return db.Products; } }
+
+        public IQueryable<Review> SortedReviews
+        { get { return db.Reviews.OrderBy(n => SortedReviews.Count(x => x ==n)).ThenBy(n => n); } }
+
+        public IQueryable<Review> Reviews => throw new NotImplementedException();
+
+        public Product Save(Product product)
+        {
+            db.Products.Add(product);
+            db.SaveChanges();
+            return product;
+        }
+
+        public Product Edit(Product product)
+        {
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+            return product;
+        }
+
+        public void Remove(Product product)
+        {
+            db.Products.Remove(product);
+            db.SaveChanges();
+        }
+
+        public void DeleteAll()
+        {
+            db.Products.RemoveRange(db.Products);
+            db.SaveChanges();
+        }
+
+
+    }
+}
