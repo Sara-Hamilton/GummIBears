@@ -5,13 +5,14 @@
 ## By Sara Hamilton
 
 # Description
-This is the Epicodus weekly project for week 1 of the .NET course.  Its purpose is to display understanding of Visual Studio MVC, ORM, and Migrations.  
+This is the Epicodus weekly project for week 1 of the .NET course.  Its purpose is to display understanding of Visual Studio MVC, ORM, Migrations, and Testing.  
 
 ## Functionality
 ### User Stories
 * a user can
   * click on a link on the landing page that takes them to a page that lists all available products
-  * click on each product and see its details
+  * click on the link to details for each product and see its details including all reviews and average review rating
+  * click on the review link in the navbar to create a review
 
 * an admin can
   * add a product
@@ -24,6 +25,13 @@ This is the Epicodus weekly project for week 1 of the .NET course.  Its purpose 
     * Name
     * Cost
     * Description
+    * ImageUrl
+
+  * Review
+    * Author
+    * Title
+    * Content_Body
+    * Rating
 
 ## Technologies Used
 * HTML
@@ -70,14 +78,28 @@ $ cd GummiBears
 *  _Setup the database_
 
  ```
- $ dotnet ef database update
+ $ dotnet ef database update --context GummiDbContext
 ```
 *  _Run the program_
 ```
 $ dotnet run
 ```
 ## Testing
+<<<<<<< HEAD
 * _Open project solution in Visual Studio_
+=======
+* _Move two layers into the directory_
+```
+$ cd GummiBears/GummiBears
+```
+*  _Setup the testing database_
+
+ ```
+ $ dotnet ef database update --context TestDbContext
+```
+* _Open project solution in Visual Studio_
+
+>>>>>>> 73b50fead682f8efa69979ad4a66ab6ad52dcd78
 *  _Run the tests_
 
 

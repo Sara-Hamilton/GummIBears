@@ -14,17 +14,20 @@
     <p>@Html.DisplayNameFor(model => model.Cost) : <span>$</span>@Html.DisplayFor(model => model.Cost)</p>
 </div>
 <h2>Reviews</h2>
-<h3>Average review : @Model.Reviews.Average(r => r.Rating)</h3>
+@*<h3>Average review : @Model.Reviews.Average(r => r.Rating)</h3>*@
+<h3>Average review : @String.Format("{0:N0}", @Model.AverageReview())</h3>
+
 <h3></h3>
 @foreach (var listReview in @Model.Reviews)
 {
-    <div class="well">
+<div class="well">
 
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Title) : @Html.DisplayFor(modelProduct => listReview.Title)</p>
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Content) : @Html.DisplayFor(modelProduct => listReview.Content)</p>
-        <p>@Html.DisplayNameFor(modelProduct => listReview.Rating) : @Html.DisplayFor(modelProduct => listReview.Rating)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Author) : @Html.DisplayFor(modelProduct => listReview.Author)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Title) : @Html.DisplayFor(modelProduct => listReview.Title)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Content_Body) : @Html.DisplayFor(modelProduct => listReview.Content_Body)</p>
+    <p>@Html.DisplayNameFor(modelProduct => listReview.Rating) : @Html.DisplayFor(modelProduct => listReview.Rating)</p>
 
-     </div>
+</div>
 <hr />
 }
 
