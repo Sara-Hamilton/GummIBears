@@ -41,5 +41,6 @@ namespace GummiBears.Models
         {
             return this.Reviews.Average(r => r.Rating);
         }
+
     }
 }
