@@ -22,13 +22,29 @@ namespace GummiBears.Data
                 new Product(){ Name = "Glitter Gummies", Description = "16 oz. bag  of pink and purple glittery gummi bears", Cost = 8, ImageUrl = "https://img0.etsystatic.com/165/1/8581691/il_340x270.1095861008_ny4h.jpg" },
                 new Product(){ Name = "Shark Gummies", Description = "8 0z. bag of shark gummies", Cost = 4, ImageUrl = "https://tse2.mm.bing.net/th?id=OIP.a-PODiqFhHX7pdJxcKuK6gHaFj&pid=15.1&P=0&w=236&h=178" },
                 new Product(){ Name = "Gummi Worms", Description = "16 oz. bag of rainbow colored gummi worms", Cost = 6, ImageUrl = "http://25.media.tumblr.com/tumblr_m3295w1I751qfz9ceo1_500.jpg" },
-                new Product(){ Name = "Red Hot Gummies", Description = "16 oz. bag  of red hot gummi bears", Cost = 3 , ImageUrl = "https://tse4.mm.bing.net/th?id=OIP.flaaR4C9-l9cdbIWbVletQHaHa&pid=15.1&P=0&w=300&h=300"},
+                new Product(){ Name = "Red Hot Gummies", Description = "16 oz. bag  of red hot gummi bears", Cost = 3 , ImageUrl = "https://tse4.mm.bing.net/th?id=OIP.flaaR4C9-l9cdbIWbVletQHaHa&pid=15.1&P=0&w=300&h=300"}
+            };
+
+            var reviews = new Review[]
+            {
+                new Review() { ReviewId = 1, Title = "Love It!", Author = "Sara", Content_Body = "This is the best gummy bear I have ever had.", Rating = 5, ProductId = 1},
+                new Review() { ReviewId = 2, Title = "Yummy Gummy", Author = "Jim", Content_Body = "This is great.  You should buy it.", Rating = 5, ProductId = 1},
+                new Review() { ReviewId = 3, Title = "Meh", Author = "Megan", Content_Body = "These are OK.  I've had better", Rating = 3, ProductId = 3},
+                new Review() { ReviewId = 4, Title = "Go Glitter!", Author = "Kevin", Content_Body = "Everything's better with glitter.  These gummy bears are no exception.", Rating = 3, ProductId = 3},
+                new Review() { ReviewId = 5, Title = "Gross", Author = "Jake", Content_Body = "Who wants to eat glitter?", Rating = 1, ProductId = 3},
+                new Review() { ReviewId = 6, Title = "Great Green Gummies", Author = "George", Content_Body = "These are great.  i can't stop eating them.", Rating = 5, ProductId = 3}
             };
 
             foreach (Product p in products)
             {
                 context.Products.Add(p);
             }
+
+            foreach (Review r in reviews)
+            {
+                context.Reviews.Add(r);
+            }
+
             context.SaveChanges();
         }
     }
