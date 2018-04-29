@@ -13,9 +13,7 @@ namespace GummiBears.Controllers
         private GummiDbContext db = new GummiDbContext();
         public IActionResult Index()
         {
-            //var test = db.Products.GroupBy(ProductId => ProductId).OrderBy(ProductId => ProductId.Count()).Take(3).ToList();
-            //List<Product> model = new List<Product>(test);
-            List<Product> model = db.Products.Take(3).ToList();
+            List<Product> model = db.Products.OrderByDescending(x => x.AverageRating).Take(3).ToList();
             return View(model);
         }
 
