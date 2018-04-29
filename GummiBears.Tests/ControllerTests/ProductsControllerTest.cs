@@ -176,7 +176,7 @@ namespace GummiBears.Tests.ControllerTests
             db.Remove(testProduct1);
 
             //Assert
-            Assert.AreEqual(2, db.Products.Count());
+            Assert.AreEqual(1, db.Products.Count());
 
 
         }
