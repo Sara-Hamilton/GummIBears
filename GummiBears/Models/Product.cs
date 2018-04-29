@@ -18,6 +18,7 @@ namespace GummiBears.Models
         public decimal? Cost { get; set; }
         public string ImageUrl { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public decimal AverageRating { get; set; }
 
         public override bool Equals(System.Object otherProduct)
         {

@@ -8,9 +8,10 @@ using GummiBears.Tests.Models;
 namespace GummiBears.Migrations.TestDb
 {
     [DbContext(typeof(TestDbContext))]
-    partial class TestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180429225531_AddAverageRatingToProduct")]
+    partial class AddAverageRatingToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

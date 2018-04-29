@@ -3,14 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GummiBears.Tests.Models;
+using GummiBears.Data;
 
-namespace GummiBears.Migrations.TestDb
+namespace GummiBears.Migrations
 {
-    [DbContext(typeof(TestDbContext))]
-    partial class TestDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(GummiDbContext))]
+    [Migration("20180429225254_AddAverageRatingToProduct")]
+    partial class AddAverageRatingToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -61,7 +62,8 @@ namespace GummiBears.Migrations.TestDb
                 {
                     b.HasOne("GummiBears.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }
