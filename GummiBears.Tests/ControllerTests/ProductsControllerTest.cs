@@ -177,9 +177,23 @@ namespace GummiBears.Tests.ControllerTests
 
             //Assert
             Assert.AreEqual(1, db.Products.Count());
-
-
         }
-       
+
+        [TestMethod]
+        public void DB_DeleteAllDeletesAllProductsFromDatabase_Void()
+        {
+            //Arrange
+            Product testProduct1 = new Product { ProductId = 1, Name = "Giant Gummi", Description = "12 oz. gummi bear", Cost = 4.99m, ImageUrl = "https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg" };
+            Product testProduct2 = new Product { ProductId = 2, Name = "Green Gummies", Description = "16 oz. bag  of green gummi bears", Cost = 6.49m, ImageUrl = "https://www.ilovesugar.com/images/Green-Apple-Gummy-Bears-Candy.jpg" };
+            db.Save(testProduct1);
+            db.Save(testProduct2);
+
+            //Act
+            db.DeleteAll();
+
+            //Assert
+            Assert.AreEqual(1, db.Products.Count());
+        }
+
     }
 }
