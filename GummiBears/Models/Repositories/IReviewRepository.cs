@@ -11,5 +11,6 @@ namespace GummiBears.Models
         IQueryable<Product> Products { get; }
         Review Save(Review review);
         void DeleteAll();
+        Product EditProduct(Product product);
     }
 }

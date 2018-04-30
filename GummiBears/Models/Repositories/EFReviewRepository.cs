@@ -38,5 +38,12 @@ namespace GummiBears.Models
             db.Reviews.RemoveRange(db.Reviews);
             db.SaveChanges();
         }
+
+        public Product EditProduct(Product product)
+        {
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+            return product;
+        }
     }
 }
