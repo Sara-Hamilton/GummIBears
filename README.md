@@ -87,7 +87,7 @@ $ dotnet run
 ## Testing
 
 * _Open project solution in Visual Studio_
-=======
+
 * _Move two layers into the directory_
 ```
 $ cd GummiBears/GummiBears
