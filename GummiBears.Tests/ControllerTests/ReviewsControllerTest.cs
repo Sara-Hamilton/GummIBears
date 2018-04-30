@@ -21,8 +21,8 @@ namespace GummiBears.Tests.ControllerTests
 
         public void Dispose()
         {
-            productDb.DeleteAll();
             reviewDb.DeleteAll();
+            productDb.DeleteAll();
         }
 
         private void DbSetup()
