@@ -40,6 +40,10 @@ namespace GummiBears.Controllers
         [HttpPost]
         public IActionResult Create(Review review)
         {
+            //Product product = new Product();
+            //product.ProductId = review.ProductId;
+            //product.AverageRating = product.AverageReview(review.ProductId);
+            //reviewRepo.EditProduct(product);
             reviewRepo.Save(review);
             return RedirectToAction("Index");
         }
