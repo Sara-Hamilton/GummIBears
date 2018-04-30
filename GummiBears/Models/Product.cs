@@ -43,20 +43,20 @@ namespace GummiBears.Models
             return this.Reviews.Average(r => r.Rating);
         }
 
-        public decimal AverageReview(int productId)
-        {
-            List<decimal> ratingsList = new List<decimal>();
-            foreach (Review review in Reviews)
-            {
-                if(review.ProductId == productId)
-                {
-                    ratingsList.Add(review.Rating);
-                }
-            }
-            decimal result = ratingsList.Average();
+        //public decimal AverageReview(int productId)
+        //{
+        //    List<decimal> ratingsList = new List<decimal>();
+        //    foreach (Review review in Reviews)
+        //    {
+        //        if(review.ProductId == productId)
+        //        {
+        //            ratingsList.Add(review.Rating);
+        //        }
+        //    }
+        //    decimal result = ratingsList.Average();
 
-            return result;
-        }
+        //    return result;
+        //}
 
     }
 }
