@@ -117,6 +117,29 @@ namespace GummiBears.Tests
         }
 
         [TestMethod]
+        public void AverageReviewWithProductId_ReturnsAverageReviewRating_Decimal()
+        {
+            //Arrange
+            var review1 = new Review();
+            review1.ProductId = 1;
+            review1.Rating = 3;
+            var review2 = new Review();
+            review2.ProductId = 1;
+            review2.Rating = 4;
+            var product = new Product();
+            List<Review> reviews = new List<Review>();
+            reviews.Add(review1);
+            reviews.Add(review2);
+            product.Reviews = reviews;
+
+            //Act
+            var result = product.AverageReview(1);
+
+            //Assert
+            Assert.AreEqual(3.0m, result);
+        }
+
+        [TestMethod]
         public void Constructor_CreatesAProductObject_True()
         {
             //Arrange
