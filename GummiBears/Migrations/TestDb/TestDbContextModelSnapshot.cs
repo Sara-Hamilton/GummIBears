@@ -48,6 +48,8 @@ namespace GummiBears.Migrations.TestDb
 
                     b.Property<decimal>("Rating");
 
+                    b.Property<int>("ReviewQuantity");
+
                     b.Property<string>("Title");
 
                     b.HasKey("ReviewId");
