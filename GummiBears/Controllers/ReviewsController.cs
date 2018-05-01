@@ -45,7 +45,6 @@ namespace GummiBears.Controllers
             product.ProductId = review.ProductId;
             product.AverageRating = product.AverageReview(review.ProductId);
             reviewRepo.EditProduct(product);
-            //reviewRepo.Save(review);
             return RedirectToAction("Index");
         }
     }
