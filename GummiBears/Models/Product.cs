@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GummiBears.Data;
 
 namespace GummiBears.Models
 {
@@ -19,6 +20,8 @@ namespace GummiBears.Models
         public string ImageUrl { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public decimal AverageRating { get; set; }
+
+        private GummiDbContext db = new GummiDbContext();
 
         public override bool Equals(System.Object otherProduct)
         {
@@ -43,20 +46,20 @@ namespace GummiBears.Models
             return this.Reviews.Average(r => r.Rating);
         }
 
-        //public decimal AverageReview(int productId)
-        //{
-        //    List<decimal> ratingsList = new List<decimal>();
-        //    foreach (Review review in Reviews)
-        //    {
-        //        if(review.ProductId == productId)
-        //        {
-        //            ratingsList.Add(review.Rating);
-        //        }
-        //    }
-        //    decimal result = ratingsList.Average();
+        public decimal AverageReview(int productId)
+        {
+            List<decimal> ratingsList = new List<decimal>();
+            foreach (Review review in db.Reviews)
+            {
+               if(review.ProductId == productId)
+               {
+                  ratingsList.Add(review.Rating);
+                }
+            }
+            decimal result = ratingsList.Average();
 
-        //    return result;
-        //}
+            return result;
+        }
 
     }
 }

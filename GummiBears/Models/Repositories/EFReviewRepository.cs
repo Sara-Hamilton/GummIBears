@@ -41,7 +41,10 @@ namespace GummiBears.Models
 
         public Product EditProduct(Product product)
         {
-            db.Entry(product).State = EntityState.Modified;
+            //db.Entry(product).State = EntityState.Modified;
+            db.Products.Attach(product);
+            var entry = db.Entry(product);
+            entry.Property(x => x.AverageRating).IsModified = true;
             db.SaveChanges();
             return product;
         }
