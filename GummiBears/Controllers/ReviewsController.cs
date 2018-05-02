@@ -34,6 +34,8 @@ namespace GummiBears.Controllers
         public IActionResult Create(int id)
         {
             ViewBag.ProductId = new SelectList(reviewRepo.Products, "ProductId", "Name");
+            //ViewBag.AllReviews = new SelectList(reviewRepo.Reviews, "AllReviews", "Name");
+            //var AllReviews = 
             return View();
         }
 
@@ -43,7 +45,8 @@ namespace GummiBears.Controllers
             reviewRepo.Save(review);
             Product product = new Product();
             product.ProductId = review.ProductId;
-            product.AverageRating = product.AverageReview(review.ProductId);
+            var AllReviews = reviewRepo.Reviews;
+            product.AverageRating = product.AverageReview(review.ProductId, AllReviews);
             reviewRepo.EditProduct(product);
             return RedirectToAction("Index");
         }
