@@ -26,7 +26,6 @@ namespace GummiBears.Models
         public virtual ICollection<Review> Reviews { get; set; }
         public decimal AverageRating { get; set; }
 
-        //private GummiDbContext db = new GummiDbContext();
 
         public override bool Equals(System.Object otherProduct)
         {

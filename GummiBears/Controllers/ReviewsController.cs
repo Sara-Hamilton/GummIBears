@@ -34,8 +34,6 @@ namespace GummiBears.Controllers
         public IActionResult Create(int id)
         {
             ViewBag.ProductId = new SelectList(reviewRepo.Products, "ProductId", "Name");
-            //ViewBag.AllReviews = new SelectList(reviewRepo.Reviews, "AllReviews", "Name");
-            //var AllReviews = 
             return View();
         }
 
