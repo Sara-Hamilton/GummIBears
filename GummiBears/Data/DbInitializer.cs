@@ -17,7 +17,7 @@ namespace GummiBears.Data
 
             var products = new Product[]
             {
-                new Product(){ Name = "Giant Gummi", Description = "12 oz. gummi bear", Cost = 4.99m, ImageUrl = "https://i.ytimg.com/vi/1CbfG0epWHo/maxresdefault.jpg", AverageRating = 5.0m },
+                new Product(){ Name = "Giant Gummi", Description = "12 oz. gummi bear", Cost = 4.99m, ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9lOktLsSzgt-AQwbrq0wbNkyn72ChtzGvvcnm0YJF-0p2JuOd", AverageRating = 5.0m },
                 new Product(){ Name = "Green Gummies", Description = "16 oz. bag  of green gummi bears", Cost = 6.49m, ImageUrl = "https://www.ilovesugar.com/images/Green-Apple-Gummy-Bears-Candy.jpg", AverageRating = 5.0m},
                 new Product(){ Name = "Glitter Gummies", Description = "16 oz. bag  of pink and purple glittery gummi bears", Cost = 8, ImageUrl = "https://img0.etsystatic.com/165/1/8581691/il_340x270.1095861008_ny4h.jpg", AverageRating = 3.0m },
                 new Product(){ Name = "Shark Gummies", Description = "8 0z. bag of shark gummies", Cost = 4, ImageUrl = "https://tse2.mm.bing.net/th?id=OIP.a-PODiqFhHX7pdJxcKuK6gHaFj&pid=15.1&P=0&w=236&h=178", AverageRating = 5.0m },
