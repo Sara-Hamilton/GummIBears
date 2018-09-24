@@ -91,27 +91,22 @@ namespace GummiBears.Tests.ControllerTests
             CollectionAssert.Contains(collection, testReview);
         }
 
-        //This test is failing because this method calls on a private db that does not exist in the test emvironment
-        //[TestMethod]
-        //public void Mock_PostViewResultCreate_ViewResult()
-        //{
-        //    // Arrange
-        //    Review testReview = new Review
-        //    {
-        //        ReviewId = 1,
-        //        Title = "Love It!"
-        //    };
+        [TestMethod]
+        public void Mock_PostViewResultCreate_ViewResult()
+        {
+            // Arrange
+            Review testReview = new Review { ReviewId = 1, Title = "Love It!", Author = "Sara", Content_Body = "This is the best gummy bear I have ever had.", Rating = 5, ProductId = 1 };
 
-        //    DbSetup();
-        //    ReviewsController controller = new ReviewsController(reviewMock.Object);
+            DbSetup();
+            ReviewsController controller = new ReviewsController(reviewMock.Object);
 
-        //    // Act
-        //    var resultView = controller.Create(testReview) as RedirectToActionResult;
+            // Act
+            var resultView = controller.Create(testReview) as RedirectToActionResult;
 
 
-        //    // Assert
-        //    Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
-        //}
+            // Assert
+            Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
+        }
 
         [TestMethod]
         public void DB_CreatesNewEntries_Collection()

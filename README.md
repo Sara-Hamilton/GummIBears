@@ -85,15 +85,7 @@ $ cd GummiBears
 $ dotnet run
 ```
 ## Testing
-<<<<<<< HEAD
-<<<<<<< HEAD
-* _Open project solution in Visual Studio_
-=======
-=======
 
-* _Open project solution in Visual Studio_
-
->>>>>>> 1150450382310378ce9771bc70e7011d63e13e2d
 * _Move two layers into the directory_
 ```
 $ cd GummiBears/GummiBears
@@ -105,7 +97,6 @@ $ cd GummiBears/GummiBears
 ```
 * _Open project solution in Visual Studio_
 
->>>>>>> 73b50fead682f8efa69979ad4a66ab6ad52dcd78
 *  _Run the tests_
 
 ### License

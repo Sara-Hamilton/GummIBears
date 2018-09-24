@@ -22,8 +22,13 @@
     @Html.LabelFor(model => model.ProductId)
     @Html.DropDownList("ProductId")
 
+  
+    @Html.HiddenFor(model => model.ReviewId)
+
+
+
     <input type="submit" value="Create" class="btn btn-default" />
 
 }
 
-@Html.ActionLink("Back to Products", "Index", "Products", null, new {  })
+@Html.ActionLink("Back to Products", "Index", "Products", null, new { })

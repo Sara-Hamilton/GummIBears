@@ -26,7 +26,6 @@ namespace GummiBears.Models
         public virtual ICollection<Review> Reviews { get; set; }
         public decimal AverageRating { get; set; }
 
-        //private GummiDbContext db = new GummiDbContext();
 
         public override bool Equals(System.Object otherProduct)
         {
@@ -51,10 +50,10 @@ namespace GummiBears.Models
             return this.Reviews.Average(r => r.Rating);
         }
 
-        public decimal AverageReview(int productId)
+        public decimal AverageReview(int productId, IQueryable<Review> AllReviews)
         {
             List<decimal> ratingsList = new List<decimal>();
-            foreach (Review review in this.Reviews)
+            foreach (Review review in AllReviews)
             {
                 if(review.ProductId == productId)
                 {
