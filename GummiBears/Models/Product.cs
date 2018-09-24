@@ -11,6 +11,11 @@ namespace GummiBears.Models
     [Table("Products")]
     public class Product
     {
+        public Product()
+        {
+            this.Reviews = new HashSet<Review>();
+        }
+
         [Key]
         public int ProductId { get; set; }
         public string Name { get; set; }
@@ -21,7 +26,7 @@ namespace GummiBears.Models
         public virtual ICollection<Review> Reviews { get; set; }
         public decimal AverageRating { get; set; }
 
-        private GummiDbContext db = new GummiDbContext();
+        //private GummiDbContext db = new GummiDbContext();
 
         public override bool Equals(System.Object otherProduct)
         {
@@ -49,7 +54,7 @@ namespace GummiBears.Models
         public decimal AverageReview(int productId)
         {
             List<decimal> ratingsList = new List<decimal>();
-            foreach (Review review in db.Reviews)
+            foreach (Review review in this.Reviews)
             {
                 if(review.ProductId == productId)
                 {

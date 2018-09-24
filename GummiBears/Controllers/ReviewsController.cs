@@ -34,6 +34,9 @@ namespace GummiBears.Controllers
         public IActionResult Create(int id)
         {
             ViewBag.ProductId = new SelectList(reviewRepo.Products, "ProductId", "Name");
+            ViewBag.Reviews = reviewRepo.Reviews.Include(review => review.Product).ToList();
+            //List<Review> model = reviewRepo.Reviews.ToList();
+
             return View();
         }
 
